@@ -101,3 +101,20 @@ const addTaskToDom=()=>{
 
 
 
+const date=document.getElementById("date");
+
+date.innerText=getday();
+
+function getday(){
+
+    const today = new Date();
+
+    const options = {
+      weekday: 'long',
+      day: 'numeric',
+      month: 'long'
+    };
+
+  return today.toLocaleDateString("en-US", options);
+  }
+  
