@@ -1,0 +1,39 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+#container{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin:200px auto;
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 40px;
+}
+
+.item{
+    display: flex;
+    align-items: center;
+    margin:15px;
+    width: 100%;
+    justify-content: space-evenly;
+    border-bottom: 2px solid grey;
+}
+
+
+
+.inputitem{
+    color:black;
+    padding: 5px;
+    border: none;
+    font-size: 18px;
+}
+
+input[type=checkbox]:checked + .inputitem{
+    text-decoration: line-through;
+  }
