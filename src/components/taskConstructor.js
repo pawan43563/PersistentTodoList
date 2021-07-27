@@ -8,6 +8,7 @@ const task={
     updatedAt:"",
 };
 
+
 // constructor
 function Task(description){
     // initialize the task
@@ -15,7 +16,8 @@ function Task(description){
     this.taskId=uuidv4();
     this.description=description;
     this.isCompleted=false;
-    this.createdAt=new Date().toISOString().slice(0, 10);
+    
+    this.createdAt=new Date().toLocaleString();
     this.updated=false;
     this.updatedAt="";
 }

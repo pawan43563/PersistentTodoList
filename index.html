@@ -6,22 +6,32 @@
     <title>TodoList</title>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.1.0/uuidv4.min.js"></script>
+    <script src="./src/components/updateTask.js" defer></script>
     <script src="./src/components/Delete.js" defer></script>
     <script src="./src/components/completeTask.js" defer></script>
     <script src="./src/components/localStorage.js" defer></script>
     <script src="./src/app.js" defer ></script>
     <script src="./src/components/taskConstructor.js" defer></script>
     <link rel="stylesheet" href="./styles/styles.css">
-    
+    <link rel="stylesheet" href="./styles/media-queries.css">
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    <link rel="icon" href="./images/icon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=David+Libre&display=swap" rel="stylesheet">
+
 </head>
 <body onload="addTaskToDom()">
+    <div class="title">
+        <h1>TodoList</h1>
+    </div>
     <div id="container">
         <div id="root">
             <form action="#" onsubmit="TaskList(event)" name="taskInput">
-                <input type="text" name="task" id="task" />
+                <input type="text" name="task" id="task" placeholder="Enter New Task"/>
                 <button type="submit">Add Task</button>
                 <button type="reset">Cancel</button>
             </form>
@@ -29,7 +39,9 @@
         <div id="content">
     
         </div>
+    <button style="text-align: center;width: 200px;font-size: 25px;" onclick="deleteAll()">Reset</button>
     </div>
     
+ 
 </body>
 </html>

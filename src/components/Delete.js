@@ -1,5 +1,5 @@
 function delete1(e){
-    if(confirm('Cick yes to confirm')){
+    if(confirm('Cick Yes to confirm')){
       let id=e.target.parentElement.id;
       let arr=getlocalstorage();
       let start;
@@ -13,5 +13,10 @@ function delete1(e){
       addTaskToDom();
     }
   }
-   
+
+function deleteAll(){
+  const tasklist=document.getElementById("content");
+  tasklist.innerHTML=""
+  localStorage.clear();
+}
   

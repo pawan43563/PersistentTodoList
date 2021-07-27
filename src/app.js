@@ -44,7 +44,7 @@ const addTaskToDom=()=>{
 
 
         let remove=document.createElement("i");
-        remove.classList.add("fa","fa-trash");
+        remove.classList.add("fa","fa-trash","fa-2x");
         remove.setAttribute("onclick","delete1(event)")
         
 
@@ -71,31 +71,33 @@ const addTaskToDom=()=>{
         const update=document.createElement("i");
         update.classList.add("fa","fa-edit")
         update.setAttribute('onclick',"editTask(event)")
-
-
         taskDiv.appendChild(taskDesc1);
         taskDiv.appendChild(taskDesc);
-        taskDiv.appendChild(update);
-        taskDiv.appendChild(remove);
+
+        // updated
         let taskLog=document.createElement("p");
-        taskLog.textContent=element.createdAt;
-        taskDiv.appendChild(taskLog)
+        if(element.updated){
+          let small=document.createElement("p");
+          small.classList.add("smalleredit");
+          small.textContent="(edited)";
+          taskDiv.appendChild(small)
+          taskLog.textContent=element.updatedAt;
+        }else{
+          taskLog.textContent=element.createdAt;
+        }
+
+
+
+        taskDiv.appendChild(update);
+        taskDiv.appendChild(taskLog);
+        taskDiv.appendChild(remove);
         tasklist.appendChild(taskDiv)  
-        console.log(tasklist);
+        
         
     })
     content.innerHTML=tasklist.innerHTML
- 
 }   
 
-
-const editTask=(event)=>{
-    console.log("inside edittask");
-    let id=event.target.parentElement.id;
-    console.log(event.target.parentElement);
-    event.target.parentElement.childNodes[1].removeAttribute("disabled")
-    console.log(event.target.parentElement);
-}
 
 
 
