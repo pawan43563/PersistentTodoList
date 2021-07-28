@@ -64,6 +64,7 @@ form{
     padding: 10px;
     border: 2px solid black;
     border-radius: 20px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 #task{
@@ -73,6 +74,7 @@ form{
     padding: 5px;
     height: 45px;
     width: 350px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 button{
