@@ -1,6 +1,5 @@
 const editTask=(event)=>{
     let id=event.target.parentElement.id;
-    value=""
     if(event.target.classList.contains("fa-check")){
         let y1=document.getElementById(id).childNodes[1]
         let arr=getlocalstorage();
@@ -8,8 +7,24 @@ const editTask=(event)=>{
           if(element.taskId==id){
             element.description=y1.value;
             element.updatedAt=new Date().toLocaleString();
+            if(element.updated===false){
+              let small=document.createElement("p");  
+              small.id="time"
+              small.classList.add("smalleredit");
+              small.textContent="(Edited)";
+              event.target.parentElement.appendChild(small);
+              event.target.parentElement.childNodes[3].innerText=element.updatedAt;
+            }
+            else{
+              if(event.target.parentElement.childElementCount==6){
+                event.target.parentElement.childNodes[3].innerText=element.updatedAt;
+              }else{
+                event.target.parentElement.childNodes[4].innerText=element.updatedAt;
+              }
+             
+            }
             element.updated=true;
-            event.target.parentElement.childNodes[4].innerText=element.updatedAt;
+            
           }
         })
         event.target.classList.remove("fa-check");

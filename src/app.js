@@ -73,25 +73,33 @@ const addTaskToDom=()=>{
         update.setAttribute('onclick',"editTask(event)")
         taskDiv.appendChild(taskDesc1);
         taskDiv.appendChild(taskDesc);
-
+        taskDiv.appendChild(update);
         // updated
         let taskLog=document.createElement("p");
         if(element.updated){
-          let small=document.createElement("p");
+          let small=document.createElement("p");  
+          small.id="time"
           small.classList.add("smalleredit");
           small.textContent="(Edited)";
-          taskDiv.appendChild(small)
+          // taskDiv.appendChild(small)
           taskLog.textContent=element.updatedAt;
+          taskDiv.appendChild(taskLog);
+          taskDiv.appendChild(remove);
+          taskDiv.appendChild(small);
+          tasklist.appendChild(taskDiv) 
         }else{
           taskLog.textContent=element.createdAt;
+          taskDiv.appendChild(taskLog);
+        taskDiv.appendChild(remove);
+        // taskDiv.appendChild(small);
+        tasklist.appendChild(taskDiv) 
         }
 
 
 
-        taskDiv.appendChild(update);
-        taskDiv.appendChild(taskLog);
-        taskDiv.appendChild(remove);
-        tasklist.appendChild(taskDiv)  
+        // taskDiv.appendChild(update);
+        
+         
         
         
     })
