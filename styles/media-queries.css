@@ -15,14 +15,18 @@
     .inputitem{
         width: 80%;
     }
+
 }
+
+
 
 @media only screen and (max-width:990px){
     body{
         background-image: url("../images/603dda6ab03ee9d7a2c2912b_Marketing-1.png"),
     url("../images/60be3f4f1cc5b30ec779538a_Frame\ 10.png");
     background-repeat: no-repeat;
-    background-size: 500px;
+    background-size: 350px;
     background-position: top left,bottom right;
     }
 }
+
