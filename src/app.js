@@ -79,7 +79,7 @@ const addTaskToDom=()=>{
         if(element.updated){
           let small=document.createElement("p");
           small.classList.add("smalleredit");
-          small.textContent="(edited)";
+          small.textContent="(Edited)";
           taskDiv.appendChild(small)
           taskLog.textContent=element.updatedAt;
         }else{
